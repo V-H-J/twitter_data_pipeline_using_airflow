@@ -1,0 +1,45 @@
+twitter airflow data engineering --
+
+***********commands*********
+sudo apt-get update
+sudo apt install python3-pip
+sudo pip install apache-airflow
+sudo pip install pandas 
+sudo pip install s3fs
+sudo pip install tweepy
+
+*********************
+
+twitter api -> python ->  Airflow -> Ec2 -> amazon s3
+
+airlfow used for data enginnering workflows
+
+create twitter api account  ->  tweepy or extract the data [json].
+
+ workflow - sequence of tasks
+
+ dag - directed acyclic graph
+    consist of number of tasks
+        extracting, tranforming ..etc -> taks 
+
+task bulit by operators
+    ex - python, batch
+
+
+*******************************
+
+steps- 
+-------------------------------------------
+tweepy the data from using twitter api and python and saved in csv file.
+
+launch ec2 instance and install all packages given above in ec2 machine.
+
+$airflow standalone 
+    command to run airlfow server
+    copy user name and password 
+
+copy public ip dns from ec2 and add 8080 code to the end and enter -> airflow login appears and login with above taken user credentials.
+
+create dag in python file which runs through etl pipeline python file.
+
+create an s3 bucket to  save the data when airflow runs and saves data into bucket.
